@@ -31,15 +31,19 @@ namespace Collections
             //    p.draw();
             //}
 
-            char[][] field = new char[3][];
-            field[0] = new char[3];
-            field[1] = new char[3];
-            field[2] = new char[3];
+            //char[][] field = new char[3][];
+            //field[0] = new char[3];
+            //field[1] = new char[3];
+            //field[2] = new char[3];
 
-            field[0][0] = 'X';
-            field[2][2] = '0';
+            //field[0][1] = '_';
+            //field[1][0] = '|';
+            //field[1][1] = '_';
+            //field[1][2] = '|';
 
-            for(int i = 0; i < field.Length; i++)
+
+
+            for (int i = 0; i < field.Length; i++)
             {
                 for(int j = 0; j < field[i].Length; j++)
                 {
