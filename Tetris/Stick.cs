@@ -11,9 +11,9 @@ namespace Tetris
         public Stick(int x, int y, char sym)
         {
             points[0] = new Point(x, y, sym);
-            points[0] = new Point(x + 1, y, sym);
-            points[0] = new Point(x, y + 3, sym);
-            points[0] = new Point(x + 1, y + 3, sym);
+            points[1] = new Point(x, y + 1, sym);
+            points[2] = new Point(x, y + 2, sym);
+            points[3] = new Point(x, y + 3, sym);
         }
         public void Draw()
         {
@@ -21,7 +21,6 @@ namespace Tetris
             {
                 p.Draw();
             }
-               
         }
 
     }
