@@ -10,51 +10,36 @@ namespace Tetris
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            Square s = new Square(2, 5, '*');
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.RIGHT);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.RIGHT);
-            s.Draw();
+            FigureGenerator generator = new FigureGenerator(20, 0, '*');
+            Figure currentFigure = generator.GetNewFigure();
 
 
-            //Stick stick = new Stick(6, 6, '*');
-            //stick.Draw();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey();
+                    HandleKey(currentFigure, key);
 
+                }
+            }
 
-
-            //Point p1 = new Point(2, 3, '*');
-            //p1.Draw();
-
-            //Point p2 = new Point()
-            //{
-            //    x = 4,
-            //    y = 5,
-            //    c = '#'
-
-            //};
-
-            //p2.Draw();
-
-            Console.ReadLine();
         }
 
-
+        private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
+        {
+       switch (key.Key)
+            {
+                case ConsoleKey.LeftArrow:
+                    currentFigure.TryMove(Direction.LEFT);
+                    break;
+                case ConsoleKey.RightArrow:
+                    currentFigure.TryMove(Direction.RIGHT);
+                    break;
+                case ConsoleKey.DownArrow:
+                    currentFigure.TryMove(Direction.DOWN);
+                    break;
+            }
+        }
     }
 }

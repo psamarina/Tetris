@@ -12,7 +12,7 @@ namespace Enums
             Day day3 = (Day)i;
             Console.WriteLine(day3);
 
-            if(day == Day.Mon);
+            if(day == Day.Mon)
             {
                 Console.WriteLine("Понедельник");
                 Console.WriteLine((int)day);

@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tetris", "Tetris.csproj", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "..\Collections\Collections.csproj", "{A115CBAC-5434-4F6D-B632-88A9C7BB41D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enums", "..\Enums\Enums.csproj", "{BB0CCCA1-CAA9-44E7-AA9C-1CF58F882ED6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enums", "..\Enums\Enums.csproj", "{BB0CCCA1-CAA9-44E7-AA9C-1CF58F882ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomizer", "..\Randomizer\Randomizer.csproj", "{2C5C95E6-C156-4B39-8A0F-17C45DFF27B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BB0CCCA1-CAA9-44E7-AA9C-1CF58F882ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB0CCCA1-CAA9-44E7-AA9C-1CF58F882ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB0CCCA1-CAA9-44E7-AA9C-1CF58F882ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5C95E6-C156-4B39-8A0F-17C45DFF27B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5C95E6-C156-4B39-8A0F-17C45DFF27B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5C95E6-C156-4B39-8A0F-17C45DFF27B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5C95E6-C156-4B39-8A0F-17C45DFF27B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
