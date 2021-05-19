@@ -38,38 +38,50 @@ namespace Tetris
             }
         }
 
-        internal void TryMove(Direction dir)
+        internal Result TryMove(Direction dir)
         {
             Hide();
             var clone = Clone();
             Move(clone, dir);
 
-            if (VeryfyPosition(clone))
+            var result = VeryfyPosition(clone);
+            if (result == Result.SUCCESS)
                 Points = clone;
 
             Draw();
+
+            return result;
         }
 
-        internal void TryRotate()
+        internal Result TryRotate()
         {
             Hide();
             var clone = Clone();
-            Rotate (clone);
+            Rotate(clone);
 
-            if (VeryfyPosition(clone))
+            var result = VeryfyPosition(clone);
+            if (result == Result.SUCCESS)
                 Points = clone;
 
             Draw();
+            return result;
         }
 
-        private bool VeryfyPosition(Point[] pList)
+        private Result VeryfyPosition(Point[] newPoints)
         {
-            foreach (var p in pList)
+            foreach (var p in newPoints)
             {
-                if (p.X < 0 || p.Y < 0 || p.X >= Field.Width || p.Y >= Field.Height)
-                    return false;
+                if (p.Y >= Field.Height)
+                    return Result.DOWN_BORDER_STRIKE;
+
+                if (p.X >= Field.Width || p.X < 0 || p.Y < 0)
+                    return Result.BORDER_STRIKE;
+
+                if (Field.CheckStrike(p))
+                    return Result.HEAP_STRIKE;
+
             }
-            return true;
+            return Result.SUCCESS;
         }
 
         private Point[] Clone()
