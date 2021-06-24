@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Threading;
+using System.Timers;
 
 namespace Tetris
 {
     class Program
     {
+        const int TIMER_INTERVAL = 500;
+        static System.Timers.Timer timer;
+        static private Object _lockObject = new object();
+
+        static Figure currentFigure;
         static FigureGenerator generator;
         static void Main(string[] args)
         {
@@ -20,8 +26,10 @@ namespace Tetris
                 if (Console.KeyAvailable)
                 {
                     var key = Console.ReadKey();
+                    Monitor.Enter(_lockObject);
                     var result = HandleKey(currentFigure, key.Key);
                     ProcessResult(result, ref currentFigure);
+                    Monitor.Exit(_lockObject);
 
                 }
             }
@@ -34,11 +42,27 @@ namespace Tetris
             {
                 Field.AddFigure(currentFigure);
                 Field.TryDeleteLines();
-                currentFigure = generator.GetNewFigure();
-                return true;
+
+                if (currentFigure.IsOnTop())
+                {
+                    WriteGameOver();
+                    timer.Elapsed -= OnTimedEvent;
+                    return true;
+                }
+                else
+                {
+                    currentFigure = generator.GetNewFigure();
+                    return false;
+                }
             }
             else
                 return false;
+        }
+
+        private static void WriteGameOver()
+        {
+            Console.SetCursorPosition(Field.Width / 2 - 8, Field.Height / 2);
+            Console.WriteLine("G A M E   O V E R");
         }
 
         private static Result HandleKey(Figure f, ConsoleKey key)
@@ -55,6 +79,22 @@ namespace Tetris
                     return f.TryRotate();
             }
             return Result.SUCCESS;
+        }
+        private static void SetTimer()
+        {
+            // Create a timer with a two second interval.
+           timer = new System.Timers.Timer(TIMER_INTERVAL);
+            // Hook up the Elapsed event for the timer. 
+            timer.Elapsed += OnTimedEvent;
+            timer.AutoReset = true;
+            timer.Enabled = true;
+        }
+        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            Monitor.Enter(_lockObject);
+            var result = currentFigure.TryMove(Direction.DOWN);
+            ProcessResult(result, ref currentFigure);
+            Monitor.Exit(_lockObject);
         }
     }
 }

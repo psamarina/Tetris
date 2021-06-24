@@ -67,6 +67,11 @@ namespace Tetris
             return result;
         }
 
+        internal bool IsOnTop()
+        {
+            return Points[0].Y == 0;
+        }
+
         private Result VeryfyPosition(Point[] newPoints)
         {
             foreach (var p in newPoints)
