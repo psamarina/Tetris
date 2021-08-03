@@ -1,0 +1,10 @@
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\bin\Debug\TetrisGUI1.exe.config
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\bin\Debug\TetrisGUI1.exe
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\bin\Debug\TetrisGUI1.pdb
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\bin\Debug\SmallBasicLibrary.dll
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\bin\Debug\SmallBasicLibrary.xml
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\obj\Debug\TetrisGUI1.csproj.AssemblyReference.cache
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\obj\Debug\TetrisGUI1.csproj.CoreCompileInputs.cache
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\obj\Debug\TetrisGUI1.csproj.CopyComplete
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\obj\Debug\TetrisGUI1.exe
+C:\Users\p.samarina\source\repos\Tetris\Tetris\TetrisGUI1\obj\Debug\TetrisGUI1.pdb

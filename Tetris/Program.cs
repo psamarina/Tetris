@@ -17,7 +17,8 @@ namespace Tetris
             DrawerProvider.Drawer.InitField();
 
             generator = new FigureGenerator(Field.Width / 2, 0);
-            Figure currentFigure = generator.GetNewFigure();
+            currentFigure = generator.GetNewFigure();
+            SetTimer();
 
 
             while (true)
