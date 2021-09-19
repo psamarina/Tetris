@@ -18,15 +18,17 @@ namespace Tetris
             }
         }
 
-        public void Move(Direction dir)
-        {
-            foreach (var p in Points)
-            {
-                p.Move(dir);
-            }
-        }
+        //public void Move(Direction dir)
+        //{
+        //    Hide();
+        //    foreach(Point p in points)
+        //    {
+        //        p.Move(dir);
+        //    }
+        //    Draw();
+        //}
 
-        public abstract void Rotate(Point[] pList);
+    public abstract void Rotate(Point[] pList);
 
         public void Hide()
         {
@@ -39,47 +41,31 @@ namespace Tetris
         internal Result TryMove(Direction dir)
         {
             Hide();
+            var clone = Clone();
+            Move(clone, dir);
 
-            Move(dir);
-
-            var result = VerityPosition();
-            if (result != Result.SUCCESS)
-                Move(Reverse(dir));
+            var result = VeryfyPosition(clone);
+            if (result == Result.SUCCESS)
+                Points = clone;
 
             Draw();
+
             return result;
-        }
-
-        private Direction Reverse(Direction dir)
-        {
-            switch (dir)
-            {
-
-                case Direction.LEFT:
-                    return Direction.RIGHT;
-                case Direction.RIGHT:
-                    return Direction.LEFT;
-                case Direction.DOWN:
-                    return Direction.UP;
-                case Direction.UP:
-                    return Direction.DOWN;
-            }
         }
 
         internal Result TryRotate()
         {
             Hide();
-            Rotate();
+            var clone = Clone();
+            Rotate(clone);
 
-            var result = VerityPosition();
-            if (result != Result.SUCCESS)
-                Rotate();
+            var result = VeryfyPosition(clone);
+            if (result == Result.SUCCESS)
+                Points = clone;
 
             Draw();
             return result;
         }
-
-        public abstract void Rotate();
 
         internal bool IsOnTop()
         {
@@ -103,6 +89,15 @@ namespace Tetris
             return Result.SUCCESS;
         }
 
+        private Point[] Clone()
+        {
+            var newPoints = new Point[LENGHT];
+            for(int i = 0; i < LENGHT; i++)
+            {
+                newPoints[i] = new Point( Points[i]);
+            }
+            return newPoints;
+        }
         public void Move(Point[] pList, Direction dir)
         {
             foreach(var p in pList)

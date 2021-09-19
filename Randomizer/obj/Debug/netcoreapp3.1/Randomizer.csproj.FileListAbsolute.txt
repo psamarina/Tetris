@@ -1,0 +1,12 @@
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\bin\Debug\netcoreapp3.1\Randomizer.exe
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\bin\Debug\netcoreapp3.1\Randomizer.deps.json
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\bin\Debug\netcoreapp3.1\Randomizer.runtimeconfig.json
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\bin\Debug\netcoreapp3.1\Randomizer.runtimeconfig.dev.json
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\bin\Debug\netcoreapp3.1\Randomizer.dll
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\bin\Debug\netcoreapp3.1\Randomizer.pdb
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\obj\Debug\netcoreapp3.1\Randomizer.AssemblyInfoInputs.cache
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\obj\Debug\netcoreapp3.1\Randomizer.AssemblyInfo.cs
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\obj\Debug\netcoreapp3.1\Randomizer.csproj.CoreCompileInputs.cache
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\obj\Debug\netcoreapp3.1\Randomizer.dll
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\obj\Debug\netcoreapp3.1\Randomizer.pdb
+C:\Users\p.samarina\source\repos\Tetris\Tetris\Randomizer\obj\Debug\netcoreapp3.1\Randomizer.genruntimeconfig.cache
